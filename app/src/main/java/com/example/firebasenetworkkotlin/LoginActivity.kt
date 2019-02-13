@@ -2,6 +2,9 @@ package com.example.firebasenetworkkotlin
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
+import com.google.firebase.auth.FirebaseAuth
+import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity() {
 
@@ -9,5 +12,33 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
+        initListener()
+    }
+
+    private fun initListener() {
+        btnLogin.setOnClickListener {
+            performLogin()
+        }
+
+        tvCreateAccount.setOnClickListener {
+            finish()
+        }
+    }
+
+    private fun performLogin() {
+        val email = etEmailLogin.text.toString()
+        val password = etPasswordLogin.text.toString()
+
+        if (email.isEmpty() || password.isEmpty()){
+            Log.d("Login", "Fields is empty!!!")
+        }
+        Log.d("Login", "Email: $email")
+
+        val mAuth = FirebaseAuth.getInstance()
+
+        mAuth.signInWithEmailAndPassword(email, password)
+            .addOnCompleteListener {
+
+            }
     }
 }
