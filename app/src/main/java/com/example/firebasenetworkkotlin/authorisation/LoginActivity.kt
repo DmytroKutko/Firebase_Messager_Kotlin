@@ -1,8 +1,11 @@
-package com.example.firebasenetworkkotlin
+package com.example.firebasenetworkkotlin.authorisation
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
+import com.example.firebasenetworkkotlin.R
+import com.example.firebasenetworkkotlin.messangerActivities.LatestMessagesActivity
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_login.*
 
@@ -38,7 +41,7 @@ class LoginActivity : AppCompatActivity() {
 
         mAuth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener {
-
+                startActivity(Intent(this, LatestMessagesActivity::class.java))
             }
     }
 }
