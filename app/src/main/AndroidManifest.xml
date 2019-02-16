@@ -11,21 +11,21 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".messangerActivities.ChatLogActivity">
+        <activity android:name=".messager.ChatLogActivity">
             <meta-data
                     android:name="android.support.PARENT_ACTIVITY"
-                    android:value=".messangerActivities.NewMessageActivity"/>
+                    android:value=".messager.NewMessageActivity"/>
         </activity>
-        <activity android:name=".messangerActivities.NewMessageActivity">
+        <activity android:name=".messager.NewMessageActivity">
             <meta-data
                     android:name="android.support.PARENT_ACTIVITY"
-                    android:value=".messangerActivities.LatestMessagesActivity"/>
+                    android:value=".messager.LatestMessagesActivity"/>
         </activity>
-        <activity android:name=".messangerActivities.LatestMessagesActivity">
-            <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.MAIN"/>-->
-                <!--<category android:name="android.intent.category.LAUNCHER"/>-->
-            <!--</intent-filter>-->
+        <activity android:name=".messager.LatestMessagesActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
         </activity>
         <activity android:name=".authorisation.RegisterActivity">
             <intent-filter>

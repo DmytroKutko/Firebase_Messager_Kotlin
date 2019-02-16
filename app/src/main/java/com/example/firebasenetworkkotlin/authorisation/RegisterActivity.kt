@@ -10,7 +10,7 @@ import android.util.Log
 import android.view.View
 import android.widget.Toast
 import com.example.firebasenetworkkotlin.R
-import com.example.firebasenetworkkotlin.messangerActivities.LatestMessagesActivity
+import com.example.firebasenetworkkotlin.messager.LatestMessagesActivity
 import com.example.firebasenetworkkotlin.model.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase

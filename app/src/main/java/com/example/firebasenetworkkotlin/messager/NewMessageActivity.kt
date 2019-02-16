@@ -1,4 +1,4 @@
-package com.example.firebasenetworkkotlin.messangerActivities
+package com.example.firebasenetworkkotlin.messager
 
 import android.content.Intent
 import android.os.Bundle

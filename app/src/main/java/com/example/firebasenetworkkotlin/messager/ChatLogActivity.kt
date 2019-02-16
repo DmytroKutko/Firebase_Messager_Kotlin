@@ -1,4 +1,4 @@
-package com.example.firebasenetworkkotlin.messangerActivities
+package com.example.firebasenetworkkotlin.messager
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
@@ -92,13 +92,14 @@ class ChatLogActivity : AppCompatActivity() {
         }
 
         val chatMessage = ChatMessage(messageRef.key!!, text, fromId, toId, currentTime)
+
         messageRef.setValue(chatMessage)
-            .addOnSuccessListener {
-                Log.d("ChatLog", "Reference ${messageRef.key}")
-                etMessage.text.clear()
-                rvChatLog.scrollToPosition(adapter.itemCount - 1)
-            }
         toMessageRef.setValue(chatMessage)
+
+        val latestMessageRef = FirebaseDatabase.getInstance().getReference("/latest_messages/$fromId/$toId")
+        latestMessageRef.setValue(chatMessage)
+        val latestMessageToRef = FirebaseDatabase.getInstance().getReference("/latest_messages/$toId/$fromId")
+        latestMessageToRef.setValue(chatMessage)
     }
 
     private fun setTitleChat() {
