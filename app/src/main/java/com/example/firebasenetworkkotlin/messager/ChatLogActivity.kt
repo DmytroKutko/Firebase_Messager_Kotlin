@@ -54,6 +54,7 @@ class ChatLogActivity : AppCompatActivity() {
                         adapter.add(ChatToItem(text, toUser!!))
                     }
                 }
+                rvChatLog.scrollToPosition(adapter.itemCount - 1)
             }
 
             override fun onCancelled(p0: DatabaseError) {
